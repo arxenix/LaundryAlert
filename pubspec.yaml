@@ -1,0 +1,5 @@
+name: LaundryAlert
+description: An app to view and get alerted for laundry
+dependencies:
+  flutter:
+    path: ../flutter/packages/flutter

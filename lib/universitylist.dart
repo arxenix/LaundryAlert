@@ -83,6 +83,7 @@ class _UniversityListState extends State<UniversityList> {
         Navigator.pushNamed(context, 'dormlist/${_code}');
       }
       else {
+        Focus.clear(context);
         _showInSnackBar("Error - Invalid school code! Please report this to the app authors if you believe it is an error.");
       }
     });
@@ -119,7 +120,7 @@ class _UniversityListState extends State<UniversityList> {
         key: _scaffoldKey,
         appBar: new AppBar(
           title: new Text('LaundryAlert - Select School'),
-          tabBar: new TabBar<Page>(
+          bottom: new TabBar<Page>(
             labels: new Map<Page, TabLabel>.fromIterable(_pages, value: (Page page) {
               return new TabLabel(text: page.label);
             })
@@ -168,10 +169,9 @@ class _UniversityListState extends State<UniversityList> {
                             validator: _validatePassword
                           )
                         ),
-                        new MaterialButton(
-                          child: new Text('View'),
-                          onPressed: _handleSubmitted,
-                          color: Colors.blue[500]
+                        new RaisedButton(
+                          child: new Text('Go!'),
+                          onPressed: _handleSubmitted
                         )
                       ]
                     )

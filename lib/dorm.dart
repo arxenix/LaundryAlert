@@ -85,7 +85,7 @@ class _SingleDormViewState extends State<SingleDormView> {
     var trailing = null;
     if(item.timeLeft!=null && item.timeLeft.length!=0) {
       trailing = new IconButton(
-        icon: Icons.alarm_add,
+        icon: new Icon(Icons.alarm_add),
         color: Colors.green[500],
         tooltip: "Set an alarm for this machine",
         onPressed: () {
